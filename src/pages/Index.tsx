@@ -1,12 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import BottomNavigation from "@/components/layout/BottomNavigation";
+import HomeScreen from "@/components/screens/HomeScreen";
+import AlertsScreen from "@/components/screens/AlertsScreen";
+import LearnScreen from "@/components/screens/LearnScreen";
+import CommunityScreen from "@/components/screens/CommunityScreen";
+import StoreScreen from "@/components/screens/StoreScreen";
 
 const Index = () => {
+  const [activeScreen, setActiveScreen] = useState("home");
+
+  const renderScreen = () => {
+    switch (activeScreen) {
+      case "home":
+        return <HomeScreen />;
+      case "alerts":
+        return <AlertsScreen />;
+      case "learn":
+        return <LearnScreen />;
+      case "community":
+        return <CommunityScreen />;
+      case "store":
+        return <StoreScreen />;
+      default:
+        return <HomeScreen />;
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background max-w-md mx-auto relative">
+      <main className="overflow-y-auto">
+        {renderScreen()}
+      </main>
+      <BottomNavigation 
+        activeScreen={activeScreen} 
+        onScreenChange={setActiveScreen} 
+      />
     </div>
   );
 };

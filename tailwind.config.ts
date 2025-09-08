@@ -19,6 +19,15 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // Farmily brand colors
+        "primary-green": "hsl(var(--primary-green))",
+        "light-green": "hsl(var(--light-green))",
+        "brown": "hsl(var(--brown))",
+        "blue": "hsl(var(--blue))",
+        "wireframe": "hsl(var(--wireframe))",
+        "wireframe-dark": "hsl(var(--wireframe-dark))",
+        
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
